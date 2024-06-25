@@ -1,4 +1,5 @@
 # Amov Gimbal Library
+## Introduction
 Origin Repo: https://gitee.com/amovlab/amov-gimbal-libs
 
 Origin repo is only binary complied by gcc in Linux. This Repo add support for MSVC.
@@ -6,3 +7,8 @@ Origin repo is only binary complied by gcc in Linux. This Repo add support for M
 Source File: https://gitee.com/amovlab/SpireCV/tree/master/gimbal_ctrl/driver/src
 
 Test in MSVC 2022.
+
+## Refrence
+Serial: https://github.com/wjwwood/serial
+
+pthread-win32: https://github.com/GerHobbelt/pthread-win32
