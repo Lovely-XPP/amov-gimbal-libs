@@ -10,7 +10,11 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 add_subdirectory(lib/serial)
 if(WIN32)
-add_subdirectory(lib/pthread-win32)
+  add_subdirectory(lib/pthread-win32)
+endif()
+
+if(MSVC)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /w")
 endif()
 
 ## JETSON, X86_CUDA, X86_INTEL
