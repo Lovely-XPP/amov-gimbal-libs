@@ -6,7 +6,7 @@ Origin repo is only binary complied by gcc in Linux. This Repo add support for M
 
 Source File: https://gitee.com/amovlab/SpireCV/tree/master/gimbal_ctrl/driver/src
 
-Test in MSVC 2022 and gcc 9.4.
+Test successfully with MSVC 2022 and gcc 9.4.
 
 ## Refrence
 Serial: https://github.com/wjwwood/serial
