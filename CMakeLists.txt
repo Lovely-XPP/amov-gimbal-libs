@@ -54,7 +54,7 @@ set(gimbal_SRCS
 )
 
 # Gimbal Lib
-add_library(sv_gimbal STATIC ${driver_SRCS} ${gimbal_SRCS})
+add_library(sv_gimbal SHARED ${driver_SRCS} ${gimbal_SRCS})
 if(UNIX)
   target_link_libraries(sv_gimbal rt pthread serial)
 endif(UNIX)

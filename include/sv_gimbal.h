@@ -14,6 +14,7 @@
 #include <iterator>
 #include <thread>
 #include <mutex>
+#include <amovGimbal/amov_gimbal_struct.h>
 
 namespace sv
 {
@@ -220,6 +221,9 @@ namespace sv
         double roll_rate,
         double pitch_rate,
         double yaw_rate);
+
+    // get gimbal state
+    AMOV_GIMBAL_STATE_T getGimbalState();
   };
 }
 #endif

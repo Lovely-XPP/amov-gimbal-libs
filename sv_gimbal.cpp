@@ -509,9 +509,17 @@ void sv::Gimbal::setAngleRateEuler(double roll_rate, double pitch_rate, double y
     temp.yaw = yaw_rate;
     pdevTemp->setGimabalSpeed(temp);
 }
+
+AMOV_GIMBAL_STATE_T sv::Gimbal::getGimbalState()
+{
+    amovGimbal::gimbal *pdevTemp = (amovGimbal::gimbal *)this->dev;
+    AMOV_GIMBAL_STATE_T state = pdevTemp->getGimabalState();
+    return state;
+}
+
 void sv::Gimbal::attitudeCorrection(const GimbalQuaternionT &quaterion,
-                                    const GimbalVelocityT &speed,
-                                    const GimbalVelocityT &acc, void *extenData)
+                                   const GimbalVelocityT &speed,
+                                   const GimbalVelocityT &acc, void *extenData)
 {
     amovGimbal::gimbal *pdevTemp = (amovGimbal::gimbal *)this->dev;
     AMOV_GIMBAL_QUATERNION_T temp_q;
