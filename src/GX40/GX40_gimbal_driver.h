@@ -94,7 +94,7 @@ public:
             pthread_cancel(nopSendThreadHandle);
         }
         #else
-        parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle
+        parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle);
         sendThreadHanle = sendThreadHanle == 0 ? 0 : pthread_cancel(sendThreadHanle);
         stackThreadHanle = stackThreadHanle == 0 ? 0 : pthread_cancel(stackThreadHanle);
         nopSendThreadHandle = nopSendThreadHandle == 0 ? 0 : pthread_cancel(nopSendThreadHandle);

@@ -82,7 +82,7 @@ namespace amovGimbal
                 pthread_cancel(stackThreadHanle);
             }
             #else
-            parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle
+            parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle);
             sendThreadHanle = sendThreadHanle == 0 ? 0 : pthread_cancel(sendThreadHanle);
             stackThreadHanle = stackThreadHanle == 0 ? 0 : pthread_cancel(stackThreadHanle);
             #endif
