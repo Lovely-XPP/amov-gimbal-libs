@@ -1,5 +1,4 @@
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-cmake_policy(SET CMP0054 NEW)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 set(PROJECT_VERSION 0.2.0)
 project(AmovGimbalCtrl VERSION ${PROJECT_VERSION} LANGUAGES CXX)
@@ -17,7 +16,6 @@ if(MSVC)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /w")
 endif()
 
-## JETSON, X86_CUDA, X86_INTEL
 message(STATUS "System:${CMAKE_HOST_SYSTEM_PROCESSOR}")
 
 # Public header
