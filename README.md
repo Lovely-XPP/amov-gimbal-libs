@@ -8,7 +8,7 @@ Source File: https://gitee.com/amovlab/SpireCV/tree/master/gimbal_ctrl/driver/sr
 
 Test successfully with MSVC 2022 and gcc 9.4.
 
-## Refrence
+## Reference
 Serial: https://github.com/wjwwood/serial
 
 pthread-win32: https://github.com/GerHobbelt/pthread-win32
