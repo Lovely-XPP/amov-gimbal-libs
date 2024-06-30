@@ -76,12 +76,15 @@ namespace sv
 
     int scoketClose(int scoket)
     {
-#if defined(_WIN32)
-        return closesocket(scoket);
-#endif
-#if defined(__linux__)
-        return close(scoket);
-#endif
+        #if defined(_WIN32)
+                return closesocket(scoket);
+        #endif
+        #if defined(__linux__)
+                return close(scoket);
+        #endif
+        #if defined(__APPLE__)
+                return close(scoket);
+        #endif
     }
     class TCPClient : public amovGimbal::IOStreamBase
     {
