@@ -55,9 +55,12 @@ set(gimbal_SRCS
 
 # Gimbal Lib
 add_library(sv_gimbal SHARED ${driver_SRCS} ${gimbal_SRCS})
-if(UNIX)
+if(LINUX)
   target_link_libraries(sv_gimbal rt pthread serial)
-endif(UNIX)
+endif()
+if(APPLE)
+  target_link_libraries(sv_gimbal pthread serial)
+endif()
 if(WIN32)
   target_link_libraries(sv_gimbal pthreadVC3 ws2_32 serial)
 endif()

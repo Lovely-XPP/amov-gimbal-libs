@@ -9,10 +9,11 @@
 #ifndef __AMOV_GIMABL_PRIVATE_H
 #define __AMOV_GIMABL_PRIVATE_H
 
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #include <unistd.h>
-#endif
+#else
 #include <pthread.h>
+#endif
 #include <stdint.h>
 #include <stdbool.h>
 #include <iostream>
@@ -81,6 +82,10 @@ namespace amovGimbal
             {
                 pthread_cancel(stackThreadHanle);
             }
+            #elif defined(__APPLE__)
+            pthread_cancel(parserThreadHanle);
+            pthread_cancel(sendThreadHanle);
+            pthread_cancel(stackThreadHanle);
             #else
             parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle);
             sendThreadHanle = sendThreadHanle == 0 ? 0 : pthread_cancel(sendThreadHanle);

@@ -19,7 +19,7 @@
 #include <ws2tcpip.h>
 #endif
 
-#if defined(__linux__)
+#if defined(__linux__) || defined(__APPLE__)
 #include <arpa/inet.h>
 #include <unistd.h>
 #endif

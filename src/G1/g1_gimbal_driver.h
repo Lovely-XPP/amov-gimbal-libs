@@ -12,7 +12,11 @@
 #include "../amov_gimbal_private.h"
 #include "g1_gimbal_struct.h"
 #include <mutex>
+#if defined(__APPLE__)
+#include <sys/malloc.h>
+#else
 #include <malloc.h>
+#endif
 #include <iostream>
 
 class g1GimbalDriver : protected amovGimbal::amovGimbalBase

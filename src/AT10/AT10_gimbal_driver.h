@@ -11,7 +11,11 @@
 #include "../amov_gimbal_private.h"
 #include "AT10_gimbal_struct.h"
 #include <mutex>
+#if defined(__APPLE__)
+#include <sys/malloc.h>
+#else
 #include <malloc.h>
+#endif
 #include <iostream>
 
 class AT10GimbalDriver : protected amovGimbal::amovGimbalBase
@@ -98,6 +102,12 @@ public:
         {
             pthread_cancel(extStackThreadHandle);
         }
+        #elif defined(__APPLE__)
+        pthread_cancel(parserThreadHanle);
+        pthread_cancel(sendThreadHanle);
+        pthread_cancel(stackThreadHanle);
+        pthread_cancel(sendHreatThreadHandle);
+        pthread_cancel(extStackThreadHandle);
         #else
         parserThreadHanle = parserThreadHanle == 0 ? 0 : pthread_cancel(parserThreadHanle);
         sendThreadHanle = sendThreadHanle == 0 ? 0 : pthread_cancel(sendThreadHanle);
